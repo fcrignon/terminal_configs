@@ -1,0 +1,174 @@
+format = """
+[](#A52AFF)\
+$os\
+$username\
+[](bg:#685AFF fg:#A52AFF)\
+$directory\
+[](fg:#685AFF bg:#28B9FF)\
+$git_commit\
+$git_branch\
+$git_status\
+[](fg:#28B9FF bg:#7129FF)\
+$nodejs\
+$deno\
+[](fg:#7129FF bg:#685AFF)\
+$docker_context\
+[](fg:#685AFF bg:#905AFF)\
+$time\
+[ ](fg:#905AFF)\
+\n[ ](fg:#33658A)\ 
+"""
+palette = 'xcad'
+
+[palettes.xcad]
+background = "#1A1A1A"
+black = "#121212"
+blue = "#2B4FFF"
+brightBlack = "#666666"
+brightBlue = "#5C78FF"
+brightCyan = "#5AC8FF"
+brightGreen = "#905AFF"
+brightPurple = "#5EA2FF"
+brightRed = "#BA5AFF"
+brightWhite = "#FFFFFF"
+brightYellow = "#685AFF"
+cursorColor = "#FFFFFF"
+cyan = "#28B9FF"
+foreground = "#F1F1F1"
+green = "#7129FF"
+name = "xcad"
+purple = "#2883FF"
+red = "#A52AFF"
+selectionBackground = "#FFFFFF"
+white = "#F1F1F1"
+yellow = "#3D2AFF"
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[username]
+show_always = true
+style_user = "bg:#A52AFF"
+style_root = "bg:#A52AFF"
+format = '[$user ]($style)'
+disabled = true
+
+[os.symbols]
+Windows = "󰍲 "
+Ubuntu = "󰕈 "
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[os]
+style = "bg:#A52AFF"
+disabled = false     # Disabled by default
+
+[directory]
+style = "bg:#685AFF"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+"workspace" = "󰲋 workspace"
+
+[time]
+disabled = false
+time_format = "%R"             # Hour:Minute Format
+style = "bg:#905AFF"
+format = '[  $time ]($style)'
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vimcmd_symbol = "[<](bold green)"
+
+[git_commit]
+tag_symbol = " tag "
+style = "bg:#28B9FF"
+
+[git_branch]
+symbol = ""
+style = "bg:#28B9FF"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#28B9FF"
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+staged = "+"
+
+[aws]
+symbol = "󰸏"
+
+[azure]
+symbol = ""
+
+[dart]
+symbol = ""
+
+[deno]
+style = "bg:#7129FF"
+symbol = "🐍 "
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:#685AFF"
+format = '[ $symbol ($context) ]($style)'
+
+[nodejs]
+style = "bg:#7129FF"
+symbol = " "
+format = '[ $symbol ($version) ]($style)'
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "meson "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[status]
+symbol = "[󱖫](bold red) "
+
+[sudo]
+symbol = "󰿗 "
+
+[terraform]
+symbol = "󱁢 "
