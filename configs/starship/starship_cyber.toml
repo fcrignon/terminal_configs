@@ -1,0 +1,259 @@
+
+format = """
+[](bg:#00ff0080 fg:darker_purple)\
+$os\
+[ ](bg:#00ff0080 fg:darker_purple)\
+$username\
+[](bg:#00ff0080 fg:electric_violet)\
+$directory\
+[ ](bg:#00ff0080 fg:electric_violet)\
+$git_branch\
+$git_status\
+$docker_context\
+$cmd_duration\
+$time\
+\n\
+$sudo\
+$character
+"""
+
+palette = 'cyberpunk_neon'
+
+[palettes.cyberpunk_neon]
+# Backgrounds - très sombres pour le contraste cyberpunk
+background = "#0A0E27"
+black = "#0D1117"
+dark_bg = "#1A1B26"
+darker_purple = "#1E0A3C"
+darker_cyan = "#0A1E2E"
+
+# Neon Colors - couleurs électriques éclatantes
+neon_cyan = "#00FFFF"
+neon_purple = "#B026FF"
+neon_magenta = "#FF00FF"
+neon_pink = "#FF006E"
+neon_blue = "#00B8FF"
+neon_red = "#FF3864"
+electric_violet = "#8B00FF"
+electric_bleu = "#0080FF"
+
+# Medium tones - pour le contraste
+medium_purple = "#7B2FFF"
+medium_cyan = "#00D9FF"
+medium_blue = "#0080FF"
+medium_violet = "#6A0DAD"
+
+# Bright variants
+bright_cyan = "#5DFDFF"
+bright_purple = "#C77DFF"
+bright_magenta = "#FF77FF"
+bright_blue = "#4DD4FF"
+
+# Text colors
+foreground = "#E0E0FF"
+white = "#FFFFFF"
+gray = "#666B8C"
+
+# Legacy compatibility names
+blue = "#00B8FF"
+brightBlue = "#4DD4FF"
+brightCyan = "#5DFDFF"
+brightGreen = "#B026FF"
+brightPurple = "#C77DFF"
+brightRed = "#FF3864"
+brightWhite = "#FFFFFF"
+brightYellow = "#7B2FFF"
+cyan = "#00FFFF"
+green = "#8B00FF"
+name = "cyberpunk_neon"
+purple = "#B026FF"
+red = "#FF006E"
+yellow = "#6A0DAD"
+
+continuation_prompt = "[▸▹ ](dimmed white)"
+
+[os]
+disabled = false
+style = "fg:neon_purple bg:darker_purple"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛 "
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Void = "󰯉"
+Unknown = "󰯉"
+
+[directory]
+style = "bg:electric_violet fg:bright_cyan"
+format = "[ ~ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Music" = " "
+"Pictures" = " "
+"Developer" = " "
+"workspace" = "󰲋 workspace"
+
+[git_branch]
+symbol = ""
+style = "fg:neon_cyan"
+format = "[ $symbol](fg:neon_purple) [$branch ]($style)"
+
+[git_status]
+style = "fg:neon_magenta"
+format = "[$all_status$ahead_behind ]($style)"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = "󱃞 "
+deleted = "✘"
+renamed = "»"
+modified = "!"
+staged = "+"
+untracked = "?"
+
+[nodejs]
+style = "bg:medium_purple fg:bright_cyan"
+symbol = " "
+format = "[ $symbol ($version) ]($style)"
+
+[deno]
+style = "bg:medium_purple fg:bright_cyan"
+symbol = " "
+format = "[ $symbol ($version) ]($style)"
+
+[python]
+symbol = " "
+style = "bg:medium_purple fg:neon_magenta"
+format = "[ $symbol ($version) ]($style)"
+
+[golang]
+symbol = " "
+style = "bg:medium_purple fg:bright_cyan"
+format = "[ $symbol ($version) ]($style)"
+
+[rust]
+symbol = " "
+style = "bg:medium_purple fg:neon_red"
+format = "[ $symbol ($version) ]($style)"
+
+[docker_context]
+symbol = " "
+style = "bg:medium_purple fg:neon_blue"
+format = "[ $symbol ($context) ]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:neon_blue"
+format = "[  $time ]($style)"
+
+[cmd_duration]
+min_time = 2_000
+format = "[ 󱦟 $duration ]($style)"
+style = "fg:neon_magenta"
+
+[fill]
+symbol = " "
+
+[line_break]
+disabled = true
+
+[character]
+format = "$symbol "
+success_symbol = "[❯_](bold neon_cyan)"
+error_symbol = "[ ❯_](bold neon_red)"
+vimcmd_symbol = "[❮](bold neon_purple)"
+# not supported in zsh
+vimcmd_replace_one_symbol = "◌"
+vimcmd_replace_symbol = "□"
+vimcmd_visual_symbol = "▼"
+
+
+[username]
+show_always = true
+style_user = "fg:electric_bleu"
+style_root = "fg:neon_red"
+format = '[󰼮 ](fg:medium_violet)[$user]($style)[ 󰼮 ](fg:medium_violet)'
+disabled = false
+
+[hostname]
+ssh_only = true
+format = '[$ssh_symbol](bold neon_blue) on [$hostname](bold neon_red) '
+trim_at = '.companyname.com'
+disabled = false
+
+[git_commit]
+tag_symbol = " tag "
+style = "fg:neon_cyan"
+
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = '[ PICKING](fg:neon_magenta)'
+rebase = '[REBASE](fg:neon_magenta)'
+merge = '[ MERGE](fg:neon_magenta)'
+revert = '[ REVERT](fg:neon_magenta)'
+bisect = '[BISECT](fg:neon_magenta)'
+disabled = false
+
+[git_metrics]
+disabled = false
+
+[aws]
+symbol = "󰸏"
+
+[azure]
+symbol = ""
+
+[dart]
+format = 'via [ $version](bold red) '
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "meson "
+
+[package]
+symbol = ""
+disabled = true
+format = "[, $version]($style) "
+display_private = true
+
+[status]
+symbol = "[󱖫](bold red) "
+
+[sudo]
+symbol = "󱗃 "
+disabled = false
+
+[terraform]
+symbol = "󱁢 "
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold red) '
+disabled = true

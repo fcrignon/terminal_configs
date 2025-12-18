@@ -1,0 +1,245 @@
+palette = 'cyberpunk_neon'
+
+[palettes.cyberpunk_neon]
+# Backgrounds - très sombres pour le contraste cyberpunk
+background = "#0A0E27"
+black = "#0D1117"
+dark_bg = "#1A1B26"
+darker_purple = "#1E0A3C"
+darker_cyan = "#0A1E2E"
+
+# Neon Colors - couleurs électriques éclatantes
+neon_cyan = "#00FFFF"
+neon_purple = "#B026FF"
+neon_magenta = "#FF00FF"
+neon_pink = "#FF006E"
+neon_blue = "#00B8FF"
+neon_red = "#FF3864"
+electric_violet = "#8B00FF"
+
+# Medium tones - pour le contraste
+medium_purple = "#7B2FFF"
+medium_cyan = "#00D9FF"
+medium_blue = "#0080FF"
+medium_violet = "#6A0DAD"
+
+# Bright variants
+bright_cyan = "#5DFDFF"
+bright_purple = "#C77DFF"
+bright_magenta = "#FF77FF"
+bright_blue = "#4DD4FF"
+
+# Text colors
+foreground = "#E0E0FF"
+white = "#FFFFFF"
+gray = "#666B8C"
+
+# Legacy compatibility names
+blue = "#00B8FF"
+brightBlue = "#4DD4FF"
+brightCyan = "#5DFDFF"
+brightGreen = "#B026FF"
+brightPurple = "#C77DFF"
+brightRed = "#FF3864"
+brightWhite = "#FFFFFF"
+brightYellow = "#7B2FFF"
+cyan = "#00FFFF"
+green = "#8B00FF"
+name = "cyberpunk_neon"
+purple = "#B026FF"
+red = "#FF006E"
+yellow = "#6A0DAD"
+
+# Format du prompt (ordre d'affichage)
+format = """
+[](fg:#A52AFF)\
+$os\
+[](bg:#685AFF fg:#A52AFF)\
+$directory\
+[](fg:#685AFF bg:#28B9FF)\
+$git_branch\
+$git_status\
+[](fg:#28B9FF bg:#7129FF)\
+$nodejs\
+$deno\
+$python\
+$golang\
+$rust\
+[](fg:#7129FF)\
+$fill\
+$cmd_duration\
+[](fg:#905AFF)\
+$time\
+[](fg:#905AFF)
+$line_break\
+$character"""
+
+[os]
+disabled = false
+style = "bg:#A52AFF fg:#FFFFFF"
+format = "[ $symbol]($style)"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Unknown = "󰯉"
+
+[directory]
+style = "bg:#685AFF fg:#FFFFFF"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+"Developer" = "󰲋"
+"workspace" = "󰲋 workspace"
+
+[git_branch]
+symbol = ""
+style = "bg:#28B9FF fg:#FFFFFF"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:#28B9FF fg:#FFFFFF"
+format = "[$all_status$ahead_behind ]($style)"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = "="
+deleted = "✘"
+renamed = "»"
+modified = "!"
+staged = "+"
+untracked = "?"
+
+[nodejs]
+style = "bg:#7129FF fg:#FFFFFF"
+symbol = ""
+format = "[ $symbol ($version) ]($style)"
+
+[deno]
+style = "bg:#7129FF fg:#FFFFFF"
+symbol = ""
+format = "[ $symbol ($version) ]($style)"
+
+[python]
+symbol = ""
+style = "bg:#7129FF fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
+
+[golang]
+symbol = ""
+style = "bg:#7129FF fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
+
+[rust]
+symbol = ""
+style = "bg:#7129FF fg:#FFFFFF"
+format = "[ $symbol ($version) ]($style)"
+
+[docker_context]
+symbol = ""
+style = "bg:#7129FF fg:#FFFFFF"
+format = "[ $symbol ($context) ]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#905AFF fg:#FFFFFF"
+format = "[ 󰥔 $time ]($style)"
+
+[cmd_duration]
+min_time = 2_000
+format = "[ 󱦟 $duration ]($style)"
+style = "fg:#FFFFFF"
+
+[fill]
+symbol = " "
+
+[line_break]
+disabled = false
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[username]
+show_always = true
+style_user = "bg:#A52AFF fg:#FFFFFF"
+style_root = "bg:#A52AFF fg:#FFFFFF"
+format = '[$user ]($style)'
+disabled = true
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = false
+
+[git_commit]
+tag_symbol = " tag "
+style = "bg:#28B9FF fg:#FFFFFF"
+
+[git_metrics]
+disabled = false
+
+[aws]
+symbol = "󰸏"
+
+[azure]
+symbol = ""
+
+[dart]
+format = 'via [ $version](bold red) '
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "meson "
+
+[package]
+symbol = ""
+disabled = true
+format = "[, $version]($style) "
+display_private = true
+
+[status]
+symbol = "[󱖫](bold red) "
+
+[sudo]
+symbol = "󱗃 "
+disabled = false
+
+[terraform]
+symbol = "󱁢 "
+
+[localip]
+ssh_only = false
+format = '@[$localipv4](bold red) '
+disabled = true

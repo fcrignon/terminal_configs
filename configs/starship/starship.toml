@@ -80,6 +80,7 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+Bazzite = "󰯉"
 
 [os]
 style = "bg:#A52AFF"
