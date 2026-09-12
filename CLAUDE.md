@@ -13,13 +13,30 @@ fournit la *logique* qui les installe.
 terminal_configs/
 └── configs/
     ├── fish/
-    │   ├── config.fish       # config fish par défaut (perso)
-    │   └── fish_work.fish    # variante avec alias spécifiques au poste pro
+    │   ├── personal/
+    │   │   └── config.fish       # machine perso (Bazzite/Homebrew)
+    │   └── work/
+    │       ├── config.fish       # poste pro DOTT/kering (Debian/Ubuntu — fdfind/batcat sont corrects ici)
+    │       ├── fish_plugins      # plugins fisher (jorgebucaran/nvm.fish, edc/bass...) — pas versionnés
+    │       │                     # en dur, réinstallés via `fisher update` une fois fisher installé
+    │       └── functions/        # fonctions perso extraites (pas les plugins fisher, voir ci-dessus)
+    │           ├── _auto_switch_node.fish
+    │           ├── backup_fish_config.fish
+    │           └── safe_cp_npmrc.fish
     └── starship/
-        ├── starship_cyber_2.toml # thème actif (cyberpunk_neon, assorti au greeting de config.fish)
+        ├── starship_cyber_2.toml # thème actif sur la machine perso (cyberpunk_neon, assorti au greeting)
+        ├── starship_work.toml    # thème actif sur le poste pro (cyberpunk_neon, variante différente)
         ├── starship.toml         # thème alternatif (xcad)
         └── starship_cyber.toml   # thème alternatif
 ```
+
+Chaque profil fish (`personal/`, `work/`) est un dossier complet — `--fish-path`
+peut donc pointer directement dessus (pas seulement sur un fichier), et
+`fish-starship-setup.sh` symlinke alors tout le dossier vers `~/.config/fish`
+(fonctions incluses). Un profil = une machine ; ne pas mélanger leurs
+fichiers. Le profil `work/` cible un environnement Debian/Ubuntu
+(`fdfind`/`batcat` y sont les bons noms de paquets) — ne pas y appliquer les
+mêmes correctifs bat/cat que sur `personal/` (Fedora/Homebrew).
 
 Ce dépôt ne contient volontairement **aucun script d'installation** : il n'y
 a jamais eu que des doublons moins robustes de ce qui existe dans
@@ -35,9 +52,18 @@ générique va dans `scripts_library`.
 dépôt de dotfiles comme celui-ci via `--repo` :
 
 ```sh
+# machine perso
 fish-starship-setup --repo git@github.com:fcrignon/terminal_configs.git \
-  --fish-path configs/fish/config.fish \
+  --fish-path configs/fish/personal \
   --starship-path configs/starship/starship_cyber_2.toml
+
+# poste pro
+fish-starship-setup --repo git@github.com:fcrignon/terminal_configs.git \
+  --fish-path configs/fish/work \
+  --starship-path configs/starship/starship_work.toml
+# puis, une fois fish/fisher en place :
+#   curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+#   fisher update   # installe les plugins listés dans fish_plugins (nvm.fish, bass)
 ```
 
 Les chemins `--fish-path`/`--starship-path` sont **nécessaires** : la
