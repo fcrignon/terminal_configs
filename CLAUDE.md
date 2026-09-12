@@ -16,9 +16,9 @@ terminal_configs/
     │   ├── config.fish       # config fish par défaut (perso)
     │   └── fish_work.fish    # variante avec alias spécifiques au poste pro
     └── starship/
-        ├── starship.toml         # thème actif (xcad)
-        ├── starship_cyber.toml   # thème alternatif
-        └── starship_cyber_2.toml # thème alternatif
+        ├── starship_cyber_2.toml # thème actif (cyberpunk_neon, assorti au greeting de config.fish)
+        ├── starship.toml         # thème alternatif (xcad)
+        └── starship_cyber.toml   # thème alternatif
 ```
 
 Ce dépôt ne contient volontairement **aucun script d'installation** : il n'y
@@ -37,7 +37,7 @@ dépôt de dotfiles comme celui-ci via `--repo` :
 ```sh
 fish-starship-setup --repo git@github.com:fcrignon/terminal_configs.git \
   --fish-path configs/fish/config.fish \
-  --starship-path configs/starship/starship.toml
+  --starship-path configs/starship/starship_cyber_2.toml
 ```
 
 Les chemins `--fish-path`/`--starship-path` sont **nécessaires** : la

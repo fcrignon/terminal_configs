@@ -6,8 +6,8 @@ Configuration personnelle de terminal (dotfiles) : fish et starship.
 
 - `configs/fish/config.fish` — config fish par défaut
 - `configs/fish/fish_work.fish` — variante avec alias spécifiques au poste pro
-- `configs/starship/starship.toml` — thème starship actif (xcad)
-- `configs/starship/starship_cyber*.toml` — thèmes alternatifs
+- `configs/starship/starship_cyber_2.toml` — thème starship actif (cyberpunk_neon)
+- `configs/starship/starship.toml`, `starship_cyber.toml` — thèmes alternatifs
 
 Pas de scripts d'installation ici : cette logique vit dans
 [`scripts_library`](https://github.com/fcrignon/scripts_library) (voir
@@ -21,7 +21,7 @@ starship, liaison des fichiers) passe par `scripts_library` :
 ```sh
 fish-starship-setup --repo git@github.com:fcrignon/terminal_configs.git \
   --fish-path configs/fish/config.fish \
-  --starship-path configs/starship/starship.toml
+  --starship-path configs/starship/starship_cyber_2.toml
 ```
 
 Voir `CLAUDE.md` pour le détail de la relation entre les deux dépôts.
