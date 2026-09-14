@@ -1,6 +1,7 @@
 # terminal_configs
 
-Configuration personnelle de terminal (dotfiles) : fish et starship.
+Configuration personnelle de terminal (dotfiles) : fish, starship et
+Ghostty.
 
 ## Structure
 
@@ -10,6 +11,9 @@ Configuration personnelle de terminal (dotfiles) : fish et starship.
 - `configs/starship/starship_cyber_2.toml` — thème actif sur la machine perso
 - `configs/starship/starship_work.toml` — thème actif sur le poste pro
 - `configs/starship/starship.toml`, `starship_cyber.toml` — thèmes alternatifs
+- `configs/ghostty/config` — config Ghostty active sur la machine perso
+  (thème cyberpunk_neon assorti à `starship_cyber_2.toml`, police Hack Nerd
+  Font Mono). À copier/symlinker vers `~/.config/ghostty/config`.
 
 Pas de scripts d'installation ici : cette logique vit dans
 [`scripts_library`](https://github.com/fcrignon/scripts_library) (voir

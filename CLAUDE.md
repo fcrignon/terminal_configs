@@ -23,11 +23,17 @@ terminal_configs/
     │           ├── _auto_switch_node.fish
     │           ├── backup_fish_config.fish
     │           └── safe_cp_npmrc.fish
-    └── starship/
-        ├── starship_cyber_2.toml # thème actif sur la machine perso (cyberpunk_neon, assorti au greeting)
-        ├── starship_work.toml    # thème actif sur le poste pro (cyberpunk_neon, variante différente)
-        ├── starship.toml         # thème alternatif (xcad)
-        └── starship_cyber.toml   # thème alternatif
+    ├── starship/
+    │   ├── starship_cyber_2.toml # thème actif sur la machine perso (cyberpunk_neon, assorti au greeting)
+    │   ├── starship_work.toml    # thème actif sur le poste pro (cyberpunk_neon, variante différente)
+    │   ├── starship.toml         # thème alternatif (xcad)
+    │   └── starship_cyber.toml   # thème alternatif
+    └── ghostty/
+        └── config                # config Ghostty active sur la machine perso
+                                   # (thème cyberpunk_neon dérivé de starship_cyber_2.toml,
+                                   # police Hack Nerd Font Mono) — à copier/symlinker vers
+                                   # ~/.config/ghostty/config (nom de fichier exact requis
+                                   # par Ghostty, pas d'extension)
 ```
 
 Chaque profil fish (`personal/`, `work/`) est un dossier complet — `--fish-path`

@@ -1,0 +1,50 @@
+# Ghostty config — thème cyberpunk_neon (assorti à starship_cyber_2.toml)
+# Géré dans le dépôt terminal_configs (configs/ghostty/config)
+
+# --- Shell ---
+command = /home/linuxbrew/.linuxbrew/bin/fish
+
+# --- Police ---
+font-family = "Hack Nerd Font Mono"
+font-size = 12
+
+# --- Fond / transparence ---
+background-opacity = 0.92
+background-blur = true
+
+# --- Couleurs de base ---
+background = #0A0E27
+foreground = #E0E0FF
+cursor-color = #00FFFF
+cursor-style = block
+cursor-style-blink = true
+selection-background = #7B2FFF
+selection-foreground = #FFFFFF
+
+# --- Palette ANSI 16 couleurs ---
+# Dérivée de la palette starship cyberpunk_neon (../starship/starship_cyber_2.toml).
+# Note: cette palette starship n'a pas de vrai vert/jaune (le "green"/"yellow" y
+# sont en réalité des violets, réservés à l'affichage starship). Pour que les
+# outils qui s'appuient sur les couleurs ANSI standard (git diff, ls, bat,
+# ripgrep...) restent lisibles, un vert et un jaune néon ont été ajoutés ici,
+# absents de la palette starship d'origine.
+palette = 0=#0D1117
+palette = 1=#FF3864
+palette = 2=#39FF88
+palette = 3=#FFD966
+palette = 4=#00B8FF
+palette = 5=#FF00FF
+palette = 6=#00FFFF
+palette = 7=#E0E0FF
+palette = 8=#666B8C
+palette = 9=#FF006E
+palette = 10=#5CFFB5
+palette = 11=#FFE066
+palette = 12=#4DD4FF
+palette = 13=#FF77FF
+palette = 14=#5DFDFF
+palette = 15=#FFFFFF
+
+# --- Confort ---
+mouse-hide-while-typing = true
+copy-on-select = true
